@@ -1,1 +1,1 @@
-This is a Privalia clone project made by fscomplex and gemmas95.
+This is a Privalia clone project made by efscomplex and gemmas95.
