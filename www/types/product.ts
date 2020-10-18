@@ -1,4 +1,4 @@
-export type Size = number | "s" | "x" | "m" | "xl";
+export type Size = number | "S" | "M" | "L" | "XL";
 
 export interface Product {
   name: string;
