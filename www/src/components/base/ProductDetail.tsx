@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { getProductById } from '../../logic/productActions'
 import ProductItem from './ProductItem.module.scss'
 
-function ProductDetail(props) {
-   const [product, setProduct] = useState(props.match.params.productId)
+function ProductDetail(props: any) {
+   const [product, setProduct] = useState(
+      getProductById(props.match.params.productId)
+   )
 
    console.log('this is productID', props.match.params.productId)
 
+   console.log('this is props', product)
    useEffect(() => {
       if (!product) setProduct(getProductById(props.match.params.productId))
    }, [product, props.match.params.productId])
