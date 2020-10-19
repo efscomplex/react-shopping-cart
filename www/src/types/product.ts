@@ -11,4 +11,5 @@ export interface Product {
    images: string[]
    id: string
    // * labels: string[]; /* pantalon ropa yellow */
+
 }
