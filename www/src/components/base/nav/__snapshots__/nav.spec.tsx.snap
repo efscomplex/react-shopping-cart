@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matche the snaptshot 1`] = `
+<nav
+  className="sc-bdnylx ivGygl"
+  column={null}
+>
+  <a
+    href="/"
+  >
+    Home
+  </a>
+</nav>
+`;
