@@ -9,5 +9,4 @@ export interface Product {
   priceBefore: number;
   priceNow: number;
   images: string[];
-  // * labels: string[]; /* pantalon ropa yellow */
 }
