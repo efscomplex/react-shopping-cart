@@ -6,6 +6,9 @@
 .pnp.js
 .env
 
+#workspace
+privalia.code-workspace
+
 # testing
 /coverage
 
