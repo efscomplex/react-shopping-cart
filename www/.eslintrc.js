@@ -20,7 +20,7 @@ module.exports = {
     '@typescript-eslint'
   ],
    rules: {
-      semi: { 'warning', 'never'},
-      indent: { 'warning', 'tab' }
+      semi: [ 'warning', 'never' ],
+      indent: [ 'warning', 'tab' ]
   }
 }
