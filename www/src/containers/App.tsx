@@ -1,11 +1,11 @@
-import Header from 'components/core/header/Header'
+import Header from '../components/core/header/Header'
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import ProductDetail from '../components/base/ProductDetail'
-import './components/ProductItem.module.scss'
+import '../components/base/ProductItem.module.scss'
 
-function App({ className }: any) {
+function App({ className }) {
    return (
       <div className={className}>
          <Header />
