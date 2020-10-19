@@ -1,32 +1,38 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "privalia api",
-  "main": "intex.ts",
-  "scripts": {
-    "dev": "nodemon -w src/* --exec npm run build",
-    "server": "nodemon dist",
-    "build": "babel src/index.ts -o dist/index.js --minified"
-  },
-  "keywords": [
-    "express",
-    "api",
-    "privalia"
-  ],
-  "author": "@easyDev",
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.3",
-    "@babel/node": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
-    "@babel/preset-typescript": "^7.12.1",
-    "@types/express": "^4.17.8",
-    "nodemon": "^2.0.5",
-    "typescript": "^4.0.3"
-  },
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.10.9"
-  }
+   "name": "backend",
+   "version": "1.0.0",
+   "description": "privalia api",
+   "main": "intex.ts",
+   "scripts": {
+      "dev": "PORT=3000 nodemon -w src --exec babel-node src/index",
+      "build": "babel src -o dist/index.js --minified"
+   },
+   "keywords": [
+      "express",
+      "api",
+      "privalia"
+   ],
+   "author": "@easyDev",
+   "license": "MIT",
+   "devDependencies": {
+      "@babel/cli": "^7.12.1",
+      "@babel/core": "^7.12.3",
+      "@babel/node": "^7.12.1",
+      "@babel/preset-env": "^7.12.1",
+      "@babel/preset-typescript": "^7.12.1",
+      "@types/express": "^4.17.8",
+      "@typescript-eslint/eslint-plugin": "^4.4.1",
+      "@typescript-eslint/parser": "^4.4.1",
+      "eslint": "^7.11.0",
+      "eslint-config-standard": "^14.1.1",
+      "eslint-plugin-import": "^2.22.1",
+      "eslint-plugin-node": "^11.1.0",
+      "eslint-plugin-promise": "^4.2.1",
+      "eslint-plugin-standard": "^4.0.1",
+      "nodemon": "^2.0.5"
+   },
+   "dependencies": {
+      "express": "^4.17.1",
+      "mongoose": "^5.10.9"
+   }
 }
