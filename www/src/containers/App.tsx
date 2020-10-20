@@ -21,9 +21,4 @@ function App({ className }: any) {
 
 export default styled(App)`
    padding: 1rem;
-   ${Search}{
-      &:focus {
-         outline: none;
-      }
-   }
 `
