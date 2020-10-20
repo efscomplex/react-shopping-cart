@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from '../link/Link'
-import { Img } from '../img/Img'
+import {Link, Img} from '../../common'
 
 interface Props {
    src: string;
