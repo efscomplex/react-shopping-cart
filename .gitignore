@@ -6,6 +6,9 @@
 .pnp.js
 .env
 
+#workspace
+privalia.code-workspace
+
 # testing
 /coverage
 
@@ -23,3 +26,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#config
+/**/package-lock.json
