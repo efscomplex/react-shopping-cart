@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components/macro'
 import { cssMargin } from '../../../helpers/mixins/margin'
+import { Props } from './propTypes'
 
 export const Label = styled('label')`
    ${cssMargin}
@@ -21,11 +22,17 @@ const cssFancyInput = css `
    padding:0 0 1px 0;
    border-bottom: 1px solid gray;
    background-color: transparent;
-   color: inherit
+   color: inherit;
 `
-export const StyInput = styled('input')`
-   padding: 12px;
-   ${(props: any) => props.fancy && cssFancyInput}
-   border-radius: 6px;
+export const StyInput = styled('input') `
    width: 100%;
+   padding: 12px;
+   
+   ${(props: Props) => props.fancy && cssFancyInput}
+   ${(props: Props) => props.theme && `
+      background-color: ${ props.theme.bg };
+      color: ${ props.theme.fg };
+      border: 1px solid ${ props.theme.fg };
+   `}
+   border-radius: 6px;
 `

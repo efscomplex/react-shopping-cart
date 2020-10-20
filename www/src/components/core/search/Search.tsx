@@ -1,16 +1,9 @@
 import React from 'react'
 import { Label, StyInput } from './styles'
+import { Props } from './propTypes'
+import styled from 'styled-components'
 
 /* NOTE pass the fancy attribute to change the input style */
-
-interface Props {
-   [prop: string]: any;
-   fancy?: string;
-   label?: string;
-   $expand?: boolean;
-   children?: any;
-   mb?: string;
-}
 
 function Input({label, ...props}: Props) {
    return (
@@ -20,6 +13,7 @@ function Input({label, ...props}: Props) {
 		</Label>
 	)
 }
+const Wrap = styled(Input)``
 
-export default Input
-export { Input }
+export default Wrap
+export { Wrap as Input }

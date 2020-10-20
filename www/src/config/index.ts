@@ -1,4 +1,4 @@
-import { Route } from "../types/route"
+import { Route, Theme } from "../types"
 
 const routes: Route[] = [
    { label: 'Category' },
@@ -17,6 +17,10 @@ const breaks = new Map(
    ]
 )
 
+export const theme: Theme= {
+   bg: 'rgb(220,220,220)',
+   fg: 'rgb(80,80,80)'
+}
 export {
    routes,
    breaks
