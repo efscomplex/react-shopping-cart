@@ -17,4 +17,4 @@ const Img = styled('img').attrs((props:Props)=>({
    ${cssSize}
 `
 export default Img
-export {Img}
+export { Img }

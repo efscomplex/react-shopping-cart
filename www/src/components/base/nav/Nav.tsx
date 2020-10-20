@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Route } from '../../../types/route'
 import { NavLink } from 'react-router-dom'
-import Link from '../link/Link'
+import { Link } from '../../common'
 
 interface Props {
    className?: string;
