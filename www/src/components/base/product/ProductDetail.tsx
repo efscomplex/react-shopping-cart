@@ -10,7 +10,7 @@ function ProductDetail(props: any) {
    )
    
    useEffect(() => {
-      if (!product) setProduct(getProductById(props.match.params.productId))
+      if (!product) setProduct(getProductById(params.productId))
    }, [product, params.productId])
 
    return (

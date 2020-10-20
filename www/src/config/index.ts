@@ -18,8 +18,9 @@ const breaks = new Map(
 )
 
 export const theme: Theme= {
-   bg: 'rgb(220,220,220)',
-   fg: 'rgb(80,80,80)'
+   bg: 'rgb(240,240,240)',
+   fg: 'transparent',
+   color: 'rgb(80,80,80)'
 }
 export {
    routes,

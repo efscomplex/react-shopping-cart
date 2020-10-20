@@ -2,9 +2,8 @@ import { Theme } from '../../../types'
 
 export interface Props {
    [prop: string]: any;
-   fancy?: string;
-   label?: string;
-   $expand?: boolean;
+   width?: string;
+   label?: JSX.Element;
    children?: any;
    theme?: Theme;
    mb?: string;

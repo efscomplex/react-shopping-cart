@@ -5,9 +5,9 @@ import styled from 'styled-components'
 
 /* NOTE pass the fancy attribute to change the input style */
 
-function Input({label, ...props}: Props) {
+function Input({label, className, theme, children, ...props}: Props) {
    return (
-		<Label {...props}>
+		<Label className={className} theme={theme}>
 			{label && <span>{label}</span>}
          <StyInput {...props}/>
 		</Label>

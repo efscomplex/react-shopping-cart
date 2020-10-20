@@ -1,0 +1,1 @@
+export {default as products} from './__mocks__/product'

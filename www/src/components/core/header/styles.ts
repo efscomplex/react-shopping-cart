@@ -8,7 +8,9 @@ export const Inline = styled('div')`
 `
 export const Header = styled('header')`
    display: flex;
+   width: 100%;
    justify-content: space-between;
+   grid-area: header;
    .text {
       font-style: italic;
    }
