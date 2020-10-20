@@ -1,3 +1,5 @@
 export * from './container/Container'
 export * from './link/Link'
 export * from './img/Img'
+export * from './fetch/Fetch'
+export * from './spinners'

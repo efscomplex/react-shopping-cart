@@ -1,9 +1,18 @@
 import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+import styled from 'styled-components'
+import { ProductDetail } from '../../components/base'
 
-export default function Main() {
+export default function({children, ...props}: any) {
    return (
-      <main>
-         <h1>main content</h1>
-      </main>
+      <Main {...props}>
+         <Switch>
+            <Route path="/:productId" component={ProductDetail} />
+          </Switch>
+      </Main>
    )
 }
+
+const Main = styled('main')`
+
+`
