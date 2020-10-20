@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { getProductById } from '../../../logic/productActions'
-import ProductItem from './ProductItem.module.scss'
+import style from './ProductItem.module.scss'
 
 function ProductDetail(props: any) {
+   const params = useParams()
    const [product, setProduct] = useState(
-      getProductById(props.match.params.productId)
+      getProductById(params.productId)
    )
    
    useEffect(() => {
       if (!product) setProduct(getProductById(props.match.params.productId))
-   }, [product, props.match.params.productId])
+   }, [product, params.productId])
 
    return (
       <>
          {product && (
             <div>
                <img src={product.images[0]} alt={product.name}></img>
-               <p className={ProductItem.text}>{product.name}</p>
+               <p className={style.text}>{product.name}</p>
             </div>
          )}
          {!product && <p>Loading...</p>}
