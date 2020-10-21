@@ -1,10 +1,10 @@
 import React from 'react'
 import Proptypes from 'prop-types'
-import './ProductItem.scss'
+import style from './ProductItem.module.scss'
 
 const ProductItem = ({ product }: any) => {
    return (
-      <li className="mainCard__container">
+      <li className={style.mainCard__container}>
          <img src={product.images[0]}></img>
          <p>{product.name}</p>
          <p>{product.priceNow}</p>
@@ -20,3 +20,4 @@ ProductItem.proptype = {
 }
 
 export default ProductItem
+export { ProductItem }

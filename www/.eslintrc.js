@@ -17,5 +17,7 @@ module.exports = {
    rules: {
       semi: ['warning', 'never'],
       indent: ['warning', 'tab'],
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-use-before-define": ["off", { "functions": false, "classes": false, "variables": false }],
    },
 }
