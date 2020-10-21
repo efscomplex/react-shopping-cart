@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import { Route, Switch } from 'react-router-dom'
 import { ProductDetail } from '../../components/base'
 import { Img, Map } from '../../components/common'
-import { products } from '../../store'
 import { breaks } from '../../config'
+import useSelector from '../../hooks/useSelector'
+import { getProducts } from 'store/selectors'
 
 const Product = ({ images, name }: any) => (
    <div>
@@ -12,7 +13,10 @@ const Product = ({ images, name }: any) => (
       <p>{name}</p>
    </div>
 )
+
 export default function ({ children, ...props }: any) {
+   const products = useSelector(getProducts)
+   
    return (
       <Main {...props}>
          <Map as={ProductWrap} from={products} template={Product} />

@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
-import { getProductById } from '../../../logic/productActions'
+import { getProductById } from 'store/selectors'
+import useSelector from '../../../hooks/useSelector'
 import style from './ProductItem.module.scss'
 
-function ProductDetail(props: any) {
-   const params = useParams()
-   const [product, setProduct] = useState(
-      getProductById(params.productId)
-   )
-   
-   useEffect(() => {
-      if (!product) setProduct(getProductById(params.productId))
-   }, [product, params.productId])
+function ProductDetail() {
+   const { productId } = useParams()
+   const product = useSelector(getProductById(productId))
 
    return (
       <>
