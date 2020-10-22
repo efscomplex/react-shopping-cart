@@ -31,6 +31,9 @@ const Wrap = styled('div')`
    position: relative;
    padding-bottom: 12px;
    text-transform: capitalize;
+   .category {
+      font-weight: bold;
+   }
    ul {
       margin-top: 12px;
       padding-left: 1rem;
@@ -38,7 +41,7 @@ const Wrap = styled('div')`
          padding: 7px 0;
       }
    }
-   border-bottom: 1px solid rgba(200,200,200,.7);
+   border-bottom: 1px solid rgba(200, 200, 200, 0.7);
    transition: max-height ease-in-out 1s;
    .hidden {
       overflow: hidden;

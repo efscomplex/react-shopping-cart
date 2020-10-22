@@ -1,4 +1,4 @@
-import products from './__mocks__/product'
+import { products, categories } from './__mocks__/'
 import storeReducer from './reducer'
 import { Reducer, Action } from '../types/store'
 
@@ -15,10 +15,7 @@ class Store {
 }
 
 const state = {
-   categories: [
-      { name: 'infantil', labels: ['niño', 'niña'] },
-      { name: 'deporte', labels: ['paddel', 'tennis', 'running', 'ciclismo'] },
-   ],
+   categories,
    products,
    cartItems: [],
 }

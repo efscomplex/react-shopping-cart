@@ -1,4 +1,4 @@
-const productMock = [
+const products = [
    {
       name: 'Abrigo Efecto Peludo Multicolor',
       // branch: "Tuc tuc",
@@ -103,4 +103,6 @@ const productMock = [
       id: '6',
    },
 ]
-export default productMock
+
+export default products
+export { products }
