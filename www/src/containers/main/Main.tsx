@@ -28,9 +28,9 @@ export default function ({ children, ...props }: any) {
 }
 const ProductWrap = styled('div')`
    display: grid;
-   grid-template-columns: repeat(3, 200px);
+   grid-template-columns: repeat(3, 1fr);
    grid-gap: 1rem;
-   
+
    @media (max-width: ${breaks.get('medium')}) {
       grid-template-columns: repeat(2, 1fr);
    }

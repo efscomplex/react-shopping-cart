@@ -16,4 +16,4 @@ function Input({label, className, theme, children, ...props}: Props) {
 const Wrap = styled(Input)``
 
 export default Wrap
-export { Wrap as Input }
+export { Wrap as Search }

@@ -1,31 +1,36 @@
 import Header from '../components/core/header/Header'
 import React from 'react'
 import styled from 'styled-components'
+import { AiOutlineSearch as Lupe } from 'react-icons/ai'
+
 import { breaks, routes, theme } from '../config'
-import { Nav } from '../components/base/nav/Nav'
 import { Container } from '../components/common'
 import Main from './main/Main'
-import Search from '../components/core/search/Search'
-import { AiOutlineSearch as Lupe} from 'react-icons/ai' 
-import Aside from '../components/core/aside/Aside'
+import { Aside, Navbar, Search } from '../components/core'
 
 function App({ className }: any) {
    return (
-      <Container className={className}>
-         <Header/>
-         <Nav routes={routes} handleClick={()=>alert('hello gemma!!')}/> 
-         <Search label={<Lupe size='22'/>} theme={theme} placeholder='busca por prenda o categoria en catálogo'/>
-         <Aside/>
-         <Main/>
+      <Container className={className} break="large">
+         <Header />
+         <Navbar routes={routes} />
+         <Search
+            label={<Lupe size="22" />}
+            theme={theme}
+            placeholder="busca por prenda o categoria en catálogo"
+         />
+         <Aside />
+         <Main />
       </Container>
    )
 }
 
 export default styled(App)`
+   font-family: 'Poppins', sans-serif;
+   font-size: 14px; 
    padding: 1rem;
    display: grid;
-   grid-template-areas: 'header header' 'nav nav' 'search search' 'aside main';
-   grid-template-columns: min-content 1fr;
+   grid-template-areas: 'header header' 'navbar navbar' 'search search' 'aside main';
+   grid-template-columns: 20ch 1fr;
    grid-gap: 1rem;
    ${Search} {
       grid-area: search;
@@ -35,5 +40,5 @@ export default styled(App)`
          width: 100%;
       }
    }
-   justify-items: center;
+   
 `

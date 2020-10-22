@@ -4,21 +4,22 @@ import { RiUser3Line } from 'react-icons/ri'
 import Logo from '../../base/logo/Logo'
 import logoSrc from '../../../assets/images/logo.png'
 import veepeSrc from '../../../assets/images/veepe.png'
-import { Header, Inline } from './styles'
+import { Header as Wrap, Inline } from './styles'
 
-export default function AppHeader(){
-
+export default function Header() {
    return (
-      <Header>
+      <Wrap>
          <Inline>
-            <Logo src={logoSrc} link='/' className='logo'/>
-            <span className='text'>parte de</span>
-            <img className='veepe' src={veepeSrc} />
+            <Logo src={logoSrc} link="/" className="logo" />
+            <span className="text">parte de</span>
+            <img className="veepe" src={veepeSrc} />
          </Inline>
          <Inline>
-            <AiOutlineShopping size='24'/>
-            <RiUser3Line size='24'/>
+            <AiOutlineShopping size="24" />
+            <RiUser3Line size="24" />
          </Inline>
-      </Header>
+      </Wrap>
    )
 }
+
+export { Header }

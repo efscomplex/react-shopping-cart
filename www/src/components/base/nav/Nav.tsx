@@ -33,20 +33,19 @@ const Nav = ({routes=[], className, handleClick, router=false, activeClass, ...p
    )
 }
 
-const Wrap = styled(Nav).attrs((props: any) =>({
-   column: props.$column ? 'column' : null
+const Wrap = styled(Nav).attrs((props: any) => ({
+   column: props.$column ? 'column' : null,
 }))`
    position: relative;
    width: 100%;
    height: ${(props: Props) => props.height};
-   grid-area: nav;
    display: flex;
    align-items: ${(props: Props) => props.align};
    flex-direction: ${(props: Props) => props.column};
-   gap: ${ (props: Props) => props.gap};
-   
+   gap: ${(props: Props) => props.gap};
+
    a {
-      padding: ${ (props: Props) => props.pd || '12px 16px'};
+      padding: ${(props: Props) => props.pd || '12px 16px'};
       text-transform: capitalize;
    }
 `

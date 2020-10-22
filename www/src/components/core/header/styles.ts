@@ -7,25 +7,28 @@ export const Inline = styled('div')`
    gap: 12px;
 `
 export const Header = styled('header')`
-   display: flex;
    width: 100%;
+   display: flex;
    justify-content: space-between;
+   gap: 10px;
    grid-area: header;
    .text {
       font-style: italic;
+      white-space: nowrap;
    }
-   .logo{
-      width: 15ch;
-      @media (min-width: ${breaks.get('small')}){
-         width: 20ch;
-      }
+   .logo {
+      width: 13ch;
    }
-   .veepe{
+   .veepe {
       width: 10ch;
       transform: translateY(-7px);
-      @media (min-width: ${breaks.get('small')}){
+   }
+   @media (min-width: ${breaks.get('small')}) {
+      .logo {
+         width: 20ch;
+      }
+      .veepe {
          width: 15ch;
       }
    }
 `
-
