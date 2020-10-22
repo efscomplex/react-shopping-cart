@@ -26,12 +26,12 @@ function App({ className }: any) {
 
 export default styled(App)`
    font-family: 'Poppins', sans-serif;
-   font-size: 14px; 
+   font-size: 14px;
    padding: 1rem;
    display: grid;
    grid-template-areas: 'header header' 'navbar navbar' 'search search' 'aside main';
    grid-template-columns: 20ch 1fr;
-   grid-gap: 1rem;
+   grid-gap: 1rem 3rem;
    ${Search} {
       grid-area: search;
       margin: 1rem 0 2rem auto;
@@ -40,5 +40,4 @@ export default styled(App)`
          width: 100%;
       }
    }
-   
 `

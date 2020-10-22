@@ -3,19 +3,13 @@ import styled from 'styled-components'
 import { Route, Switch } from 'react-router-dom'
 import { ProductDetail } from '../../components/base'
 import { Img, Map } from '../../components/common'
-import { breaks } from '../../config'
 import useSelector from '../../hooks/useSelector'
-import { getProducts } from 'store/selectors'
+import { getCategories } from 'store/selectors'
 
-const Product = ({ images, name }: any) => (
-   <div>
-      <Img src={images[0]} alt={name} />
-      <p>{name}</p>
-   </div>
-)
+const Product = ({ image, name }: any) => <Img src={image} alt={name} />
 
 export default function ({ children, ...props }: any) {
-   const products = useSelector(getProducts)
+   const products = useSelector(getCategories)
    
    return (
       <Main {...props}>
@@ -27,12 +21,16 @@ export default function ({ children, ...props }: any) {
    )
 }
 const ProductWrap = styled('div')`
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   grid-gap: 1rem;
-
-   @media (max-width: ${breaks.get('medium')}) {
-      grid-template-columns: repeat(2, 1fr);
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1rem;
+   cursor: pointer;
+   & > * {
+      flex-grow: 1;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+      min-width: 300px;
    }
 `
 

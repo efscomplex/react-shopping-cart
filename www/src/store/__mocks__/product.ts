@@ -1,7 +1,7 @@
 const products = [
    {
       name: 'Abrigo Efecto Peludo Multicolor',
-      // branch: "Tuc tuc",
+      branch: "Tuc tuc",
       description:
          'DESCRIPCIÓN: Abrigo Manga larga. Cuello alto. Estampado. Efecto peludo. COLOR: Multicolor. COMPOSICIÓN: 100% poliéster. CUIDADOS: Lavar a máquina máx. 30ºC',
       size: ['XS', 'S', 'M', 'XL', 'L'],
@@ -15,10 +15,11 @@ const products = [
          'https://img-es.prvstatic.com/front/get/photo/549400_-_images_-_products_-_29275929_-_templ4.jpg',
       ],
       id: '1',
+      keywords: ['abrigo', 'invierno', 'manga larga'],
    },
    {
       name: 'Camiseta Estampado Blanco',
-      // branch: "Tuc tuc",
+      branch: "Tuc tuc",
       description:
          'DESCRIPCIÓN: Camiseta. Manga corta. Cuello redondo. Estampado. COLOR: Blanco. COMPOSICIÓN: 95% algodón y 5% elastano. CUIDADOS: Lavar a máquina máx. 30ºC',
       size: ['XS', 'S', 'M', 'XL', 'L'],
@@ -34,7 +35,7 @@ const products = [
    },
    {
       name: 'Equipación Nueboo Soporte De Bicicleta Para Smartphone Universal',
-      // branch: "NUEBOO",
+      branch: "NUEBOO",
       description:
          'Soporte de bicicleta compatible con cualquier smartphone del mercado que te permitirá llevar cómodamente sujeto tu smartphone. Con su doble sistema de sujeción de abrazadera y goma elástica, el soporte se fija al manillar de la bicicleta, manteniendo tu dispositivo en una posición estable y segura todo el rato. Sistema de rotación 360º: permite colocar el smartphone en la posición que prefieras. Fácil de montar y de instalar.contenidosoporte de fijación al manillar.goma elástica de fijación.abrazadera.compatible con dispositivos de hasta 160mm x 80mm (iphone 7/8 plus incluido).',
       size: [],
@@ -50,7 +51,7 @@ const products = [
    },
    {
       name: 'Pantalón Deportivo Muddyfox 63656903 Negro',
-      // branch: "MUDDYFOX",
+      branch: "MUDDYFOX",
       description:
          'Pantalones cortos de mujer para ciclismo; elástico en la cintura; cordón interno; acolchado; forro interno con puños elásticos; 2 bolsillos laterales con cremallera; muddyfox marca; Colección. Colección: permanent collection / carry over. Materiales. Composición: 100% Nylon.',
       size: [32, 36, 40, 44, 48, 50, 52, 35],
@@ -68,7 +69,7 @@ const products = [
    },
    {
       name: 'Short Deportivo Muddyfox 63656643 Negro/rosa',
-      // branch: "MUDDYFOX",
+      branch: "MUDDYFOX",
       description:
          'Pantalón corto de ciclista para mujer; cinturilla elástica; con cordón interno; acolchado; panel de malla; duradero; 2 bolsillos laterales con cremallera; paneles de color de contraste; marca muddyfox; Colección. Colección: permanent collection / carry over. Materiales. Composición: 100% Nylon.',
       size: [36, 40, 44],

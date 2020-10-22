@@ -1,7 +1,7 @@
 import { Route, Theme } from "../types"
 
 const routes: Route[] = [
-   { label: 'Category' },
+   { label: 'todas' },
    { label: 'moda & beauty' },
    { label: 'infantil' },
    { label: 'hogar & tech' },

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa'
 
-const Dropdown = ({ name, labels, className }: any) => {
+const Dropdown = ({ name, fields, className }: any) => {
    const [open, setState] = useState(false)
    const toggleDropdown = (e: React.SyntheticEvent) => {
       setState((state) => !state)
@@ -14,7 +14,7 @@ const Dropdown = ({ name, labels, className }: any) => {
             <Icon open={open} onClick={toggleDropdown} />
          </div>
          <ul className={open ? '' : 'hidden'}>
-            {labels.map((label: any, i:   number) => (
+            {fields.map((label: any, i:   number) => (
                <li key={i}>{label}</li>
             ))}
          </ul>

@@ -1,4 +1,5 @@
 export interface Category {
    name: string
-   labels: string[]
+   fields: string[]
+   image: string
 }

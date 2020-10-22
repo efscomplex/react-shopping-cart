@@ -9,14 +9,14 @@ import Nav from '../../base/nav/Nav'
 const Hamburger = styled(HiMenuAlt2)``
 
 function Navbar({ routes }: any) {
-   const handleClick = () => alert('hello gemma!!')
+   //const handleClick = () => alert('hello gemma!!')
    const toggleShowMenu = () => setShowMenu((state) => !state)
    const [showMenu, setShowMenu] = useState(false)
 
    return (
       <Wrap menu={showMenu}>
          <Hamburger onClick={toggleShowMenu} />
-         <Nav routes={routes} handleClick={handleClick} />
+         <Nav routes={routes} handleClick={()  =>  {}} />
       </Wrap>
    )
 }
