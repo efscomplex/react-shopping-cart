@@ -10,6 +10,5 @@ export interface Product {
    priceNow: number
    images: string[]
    id: string
-   // * labels: string[]; /* pantalon ropa yellow */
-
+   labels: string[]
 }

@@ -8,16 +8,13 @@ function ProductDetail() {
    const { productId } = useParams()
    const product = useSelector(getProductById(productId))
 
-   return (
-      <>
-         {product && (
-            <div>
-               <img src={product.images[0]} alt={product.name}></img>
-               <p className={style.text}>{product.name}</p>
-            </div>
-         )}
-         {!product && <p>Loading...</p>}
-      </>
+   return product ? (
+      <div>
+         <img src={product.images[0]} alt={product.name}></img>
+         <p className={style.text}>{product.name}</p>
+      </div>
+   ) : (
+      <p>Loading...</p>
    )
 }
 

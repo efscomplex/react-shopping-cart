@@ -1,7 +1,7 @@
 import Header from '../components/core/header/Header'
 import React from 'react'
 import styled from 'styled-components'
-import { routes, theme } from '../config'
+import { breaks, routes, theme } from '../config'
 import { Nav } from '../components/base/nav/Nav'
 import { Container } from '../components/common'
 import Main from './main/Main'
@@ -24,13 +24,16 @@ function App({ className }: any) {
 export default styled(App)`
    padding: 1rem;
    display: grid;
-   grid-template-areas: "header header" "nav nav" "search search" "aside main";
+   grid-template-areas: 'header header' 'nav nav' 'search search' 'aside main';
    grid-template-columns: min-content 1fr;
    grid-gap: 1rem;
-   ${Search}{
+   ${Search} {
       grid-area: search;
       margin: 1rem 0 2rem auto;
       border-radius: 2px;
+      @media (max-width: ${breaks.get('medium')}) {
+         width: 100%;
+      }
    }
    justify-items: center;
 `

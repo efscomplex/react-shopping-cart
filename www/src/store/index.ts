@@ -15,6 +15,10 @@ class Store {
 }
 
 const state = {
+   categories: [
+      { name: 'infantil', labels: ['niño', 'niña'] },
+      { name: 'deporte', labels: ['paddel', 'tennis', 'running', 'ciclismo'] },
+   ],
    products,
    cartItems: [],
 }
