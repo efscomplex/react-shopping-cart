@@ -2,9 +2,9 @@ import { Route, Theme } from "../types"
 
 const routes: Route[] = [
    { label: 'todas' },
-   { label: 'moda & beauty' },
+   { label: 'moda y belleza' },
    { label: 'infantil' },
-   { label: 'hogar & tech' },
+   { label: 'hogar' },
    { label: 'viajes' },
 ]
 

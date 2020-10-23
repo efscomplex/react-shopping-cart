@@ -26,8 +26,10 @@ export default function ({ children, ...props }: any) {
    
    return (
       <Main {...props}>
-         <Map as={ProductWrap} from={products} template={Product} />
          <Switch>
+            <Route exact path='/'>
+               <Map as={ProductWrap} from={products} template={Product} />
+            </Route>
             <Route path="/:productId" component={ProductDetail} />
          </Switch>
       </Main>
