@@ -1,5 +1,6 @@
+import { Category } from '../../types/category'
 
-const categories = [
+const categories: Category[] = [
    {
       name: 'infantil',
       fields: ['niño', 'niña'],

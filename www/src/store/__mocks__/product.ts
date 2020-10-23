@@ -1,4 +1,6 @@
-const products = [
+import { Product } from '../../types/product'
+
+const products: Product[] = [
    {
       name: 'Abrigo Efecto Peludo Multicolor',
       branch: "Tuc tuc",
@@ -14,6 +16,7 @@ const products = [
          'https://img-es.prvstatic.com/front/get/photo/549400_-_images_-_products_-_29275929_-_templ3.jpg',
          'https://img-es.prvstatic.com/front/get/photo/549400_-_images_-_products_-_29275929_-_templ4.jpg',
       ],
+      categories: ['mujer'],
       id: '1',
       keywords: ['abrigo', 'invierno', 'manga larga'],
    },
@@ -31,6 +34,8 @@ const products = [
          'https://img-es.prvstatic.com/front/get/photo/549400_-_images_-_products_-_29276507_-_templ2.jpg',
          'https://img-es.prvstatic.com/front/get/photo/549400_-_images_-_products_-_29276507_-_templ3.jpg',
       ],
+      categories: ['moda'],
+      keywords: ['abrigo', 'invierno', 'manga larga'],
       id: '2',
    },
    {
@@ -47,6 +52,8 @@ const products = [
          'https://imgservice.prvstatic.com/api/resize/458x458/product/840.0549.01.00/fc24da0ad6ead68d1440ff0693a2e0bfabe50e2c.jpg?webp=true',
          'https://imgservice.prvstatic.com/api/resize/458x458/product/840.0549.01.00/20d55fab9b25d9327e679014bbaaeaca66bcaa45.jpg?webp=true',
       ],
+      categories: ['mujer'],
+      keywords: ['abrigo', 'invierno', 'manga larga'],
       id: '3',
    },
    {
@@ -65,6 +72,8 @@ const products = [
          'https://imgservice.prvstatic.com/api/resize/458x458/product/63656903/1bf1249c222f41fecd4c1264c81a8ed144bcded4.jpg?webp=true',
          'https://imgservice.prvstatic.com/api/resize/458x458/product/63656903/faf3e00262009fb7c0823452408c50f93ec7a19e.jpg?webp=true',
       ],
+      categories: ['mujer'],
+      keywords: ['abrigo', 'invierno', 'manga larga'],
       id: '4',
    },
    {
@@ -81,11 +90,13 @@ const products = [
          'https://imgservice.prvstatic.com/api/resize/458x458/product/63656643/715a4165d638e18266521ac0cd53214b3ee45169.jpg?webp=true',
          'https://imgservice.prvstatic.com/api/resize/458x458/product/63656643/543e08b4b2ea85a2d2796c0e9b8a4c71448a9799.jpg?webp=true',
       ],
+      categories: ['mujer'],
+      keywords: ['abrigo', 'invierno', 'manga larga'],
       id: '5',
    },
    {
       name: 'Chaqueta Naranja Y Azul',
-      // branch: "Sport SuperDry",
+      branch: "Sport SuperDry",
       description:
          'Pantalón corto de ciclista para mujer; cinturilla elástica; con cordón interno; acolchado; panel de malla; duradero; 2 bolsillos laterales con cremallera; paneles de color de contraste; marca muddyfox; Colección. Colección: permanent collection / carry over. Materiales. Composición: 100% Nylon.',
       size: ['M', 'L', 'XL', '2XL'],
@@ -101,6 +112,8 @@ const products = [
          'https://img-es.prvstatic.com/front/get/photo/551120_-_images_-_products_-_28891658_-_templ6.jpg',
          'https://img-es.prvstatic.com/front/get/photo/551120_-_images_-_products_-_28891658_-_templ7.jpg',
       ],
+      categories: ['mujer'],
+      keywords: ['abrigo', 'invierno', 'manga larga'],
       id: '6',
    },
 ]

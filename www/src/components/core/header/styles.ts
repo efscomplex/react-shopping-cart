@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 export const Inline = styled('div')`
    display: flex;
-   align-items: center;
-   gap: 12px;
+   align-items: flex-end;
+   gap: ${(props: any) => props.gap || '12px'};
 `
 export const Header = styled('header')`
    width: 100%;
@@ -15,9 +15,6 @@ export const Header = styled('header')`
    .text {
       font-style: italic;
       white-space: nowrap;
-   }
-   .logo {
-      width: 13ch;
    }
    .veepe {
       width: 10ch;
