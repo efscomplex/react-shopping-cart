@@ -1,6 +1,14 @@
 import React from 'react'
 import { Img, Select } from 'components/common'
-import { Actions, Badget, Btn, General, Price, Product } from './styles'
+import {
+   Actions,
+   Badget,
+   Btn,
+   Caption,
+   General,
+   Price,
+   Product,
+} from './styles'
 
 const Card = ({ className, ...product }: any) => {
    const discount =
@@ -9,10 +17,10 @@ const Card = ({ className, ...product }: any) => {
       <Product>
          <Img src={product.images[0]} alt={product.name} />
          <General>
-            <div>
+            <Caption>
                <strong>{product.branch}</strong>
-               <div>{product.name}</div>
-            </div>
+               <p>{product.name}</p>
+            </Caption>
             <Price>
                <Badget>-{discount.toFixed()}%</Badget>
                <div className="before euro">{product.priceBefore}</div>

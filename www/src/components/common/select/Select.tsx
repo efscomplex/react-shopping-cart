@@ -7,16 +7,14 @@ const Option = ({ label, children }: any) => (
 
 export default function Select({ options, label }: any) {
    return (
-      <label>
-         <span>{label}</span>
-         <Wrap>
-            {options.map((option: any) => (
-               <Option key={option} value={option}>
-                  {option}
-               </Option>
-            ))}
-         </Wrap>
-      </label>
+      <Wrap>
+         <option>{label}</option>
+         {options.map((option: any) => (
+            <Option key={option} value={option}>
+               {option}
+            </Option>
+         ))}
+      </Wrap>
    )
 }
 const Wrap = styled('select')`

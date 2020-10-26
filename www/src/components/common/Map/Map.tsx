@@ -8,14 +8,14 @@ const Map = ({
    template: Template,
    from,
    children,
+   props,
    ...restProps
 }: Props) => {
    const childs = from.map((item: Object, i: number) => (
-      <Template key={getKey(i)} {...item} />
+      <Template key={getKey(i)} {...item} {...restProps} />
    ))
-   const props = (as && restProps) || null
 
-   return React.createElement(as || Fragment, props, childs)
+   return React.createElement(as || Fragment, (as && props) || null, childs)
 }
 
 export default Map

@@ -8,7 +8,8 @@ type Props = {
 }
 
 const Container = styled('div')`
-   max-width: ${(props: Props)=> breaks.get(props.break) || breaks.get('x-large')};
+   max-width: ${(props: Props) =>
+      breaks.get(props.break) || props.break || breaks.get('x-large')};
    margin: auto;
 `
 export default Container

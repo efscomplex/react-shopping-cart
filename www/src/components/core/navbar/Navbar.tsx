@@ -15,6 +15,7 @@ function Navbar({ routes }: any) {
       store.dispatch(
          filterProducts((prod: Product) => prod.categories.includes(id))
       )
+      toggleShowMenu()
    }
    const toggleShowMenu = () => setShowMenu((state) => !state)
    const [showMenu, setShowMenu] = useState(false)
@@ -27,6 +28,7 @@ function Navbar({ routes }: any) {
    )
 }
 const Wrap = styled('div')`
+   width: 100%;
    grid-area: navbar;
    justify-self: flex-start;
    display: flex;

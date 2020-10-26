@@ -5,9 +5,9 @@ import { ProductDetail } from '../../components/base'
 import { Map } from '../../components/common'
 import { Card as ProductCard } from 'components/base'
 
-export default function ({ children, filteredProducts, ...props }: any) {
+function Main({ children, filteredProducts, ...props }: any) {
    return (
-      <Main {...props}>
+      <div {...props}>
          <Switch>
             <Route exact path="/">
                <Map
@@ -18,7 +18,7 @@ export default function ({ children, filteredProducts, ...props }: any) {
             </Route>
             <Route path="/:productId" component={ProductDetail} />
          </Switch>
-      </Main>
+      </div>
    )
 }
 const ProductWrap = styled('div')`
@@ -26,12 +26,9 @@ const ProductWrap = styled('div')`
    flex-wrap: wrap;
    gap: 1rem;
    cursor: pointer;
-   .product {
-      flex-grow: 1;
-      position: relative;
-      flex-basis: 300px;
-      height: 200px;
-   }
 `
 
-const Main = styled('main')``
+const Wrap = styled(Main)``
+
+export default Wrap
+export { Wrap as Main }

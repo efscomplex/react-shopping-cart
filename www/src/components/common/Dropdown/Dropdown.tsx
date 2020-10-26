@@ -30,6 +30,7 @@ const Dropdown = ({ name, fields, className, handleClick }: any) => {
 const Icon = styled('span').attrs((props: any) => ({
    children: props.open ? <FaAngleUp /> : <FaAngleDown />,
 }))`
+   margin-left: 12px;
    float: right;
    cursor: pointer;
 `
@@ -41,6 +42,8 @@ const Wrap = styled('div')`
       font-weight: bold;
    }
    ul {
+      display: flex;
+      flex-direction: column;
       margin-top: 12px;
       padding-left: 1rem;
       li {

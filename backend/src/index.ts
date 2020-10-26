@@ -16,7 +16,8 @@ app.use(express.json())
 app.use('/user', userRouter)
 app.use('/products', productsRouter)
 
-const PORT = 3000
+const PORT = process.env.PORT || 4000
+console.log(process.env.npm_package_name)
 app.listen(PORT, () => {
    console.log(`server listen on port ${PORT}`)
 })

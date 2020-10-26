@@ -30,17 +30,29 @@ export const Price = styled('div')`
       text-decoration: line-through;
    }
 `
+export const Caption = styled('div')`
+   strong {
+      display: block;
+      margin-bottom: 8px;
+   }
+   p {
+      font-size: 0.8rem;
+   }
+`
 export const Badget = styled('small')`
    position: absolute;
    padding: 4px;
    top: -2rem;
-   right: 10px;
+   right: 0px;
    font-weight: bold;
    background-color: #e55253;
    color: white;
 `
 export const Product = styled('div')`
-   max-width: 235px;
+   min-width: 230px;
+   flex-basis: 270px;
+   flex-shrink: 1;
+   flex-grow: 1;
    img {
       object-fit: cover;
       object-position: center;

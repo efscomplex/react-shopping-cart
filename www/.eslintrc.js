@@ -17,10 +17,10 @@ module.exports = {
    rules: {
       semi: ['warning', 'never'],
       indent: ['warning', 'tab'],
-      '@typescript-eslint/no-unused-expressions': 'off',
-      '@typescript-eslint/no-use-before-define': [
-         'off',
-         { functions: false, classes: false, variables: false },
-      ],
+      'comma-dangle': 'off',
+      'space-before-function-paren': 'off',
+      ' no-trailing-spaces': 'off'
+      'no-use-before-define': 'off',
+      '@typescript-eslint/no-use-before-define': 'off',
    },
 }
