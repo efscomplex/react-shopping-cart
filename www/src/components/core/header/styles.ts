@@ -16,10 +16,6 @@ export const Header = styled('header')`
       font-style: italic;
       white-space: nowrap;
    }
-   .veepe {
-      width: 10ch;
-      transform: translateY(-7px);
-   }
    @media (min-width: ${breaks.get('small')}) {
       .logo {
          width: 20ch;

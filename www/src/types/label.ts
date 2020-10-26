@@ -1,5 +1,7 @@
 export type Label =
    | 'niño'
+   | 'infantil'
+   | 'todas'
    | 'niña'
    | 'hombre'
    | 'moda'
@@ -7,6 +9,7 @@ export type Label =
    | 'ver todo'
    | 'iluminación'
    | 'salón y comedor'
+   | 'hogar'
    | 'cocina'
    | 'salon'
    | 'comedor'
@@ -14,6 +17,7 @@ export type Label =
    | 'telefonía'
    | 'informática'
    | 'salud y masages'
+   | 'moda y belleza'
    | 'perfumes y belleza'
    | 'entretenimiento y deporte'
    | 'entretenimiento'

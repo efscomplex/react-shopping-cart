@@ -2,7 +2,7 @@ module.exports = {
    env: {
       browser: true,
       es2021: true,
-      jest: true
+      jest: true,
    },
    extends: ['plugin:react/recommended', 'standard'],
    parser: '@typescript-eslint/parser',
@@ -17,7 +17,10 @@ module.exports = {
    rules: {
       semi: ['warning', 'never'],
       indent: ['warning', 'tab'],
-      "@typescript-eslint/no-unused-vars": "off",
-      "@typescript-eslint/no-use-before-define": ["off", { "functions": false, "classes": false, "variables": false }],
+      'comma-dangle': 'off',
+      'space-before-function-paren': 'off',
+      ' no-trailing-spaces': 'off'
+      'no-use-before-define': 'off',
+      '@typescript-eslint/no-use-before-define': 'off',
    },
 }

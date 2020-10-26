@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa'
+import Link from '../link/Link'
 
-const Dropdown = ({ name, fields, className }: any) => {
+const Dropdown = ({ name, fields, className, handleClick }: any) => {
    const [open, setState] = useState(false)
    const toggleDropdown = (e: React.SyntheticEvent) => {
       setState((state) => !state)
+   }
+   const onClick = (label: string) => () => {
+      handleClick && handleClick(label)
    }
    return (
       <Wrap className={className}>
@@ -14,8 +18,10 @@ const Dropdown = ({ name, fields, className }: any) => {
             <Icon open={open} onClick={toggleDropdown} />
          </div>
          <ul className={open ? '' : 'hidden'}>
-            {fields.map((label: any, i:   number) => (
-               <li key={i}>{label}</li>
+            {fields.map((label: any, i: number) => (
+               <Link key={i} handle={onClick(label)}>
+                  {label}
+               </Link>
             ))}
          </ul>
       </Wrap>
@@ -24,7 +30,8 @@ const Dropdown = ({ name, fields, className }: any) => {
 const Icon = styled('span').attrs((props: any) => ({
    children: props.open ? <FaAngleUp /> : <FaAngleDown />,
 }))`
-   float:right;
+   margin-left: 12px;
+   float: right;
    cursor: pointer;
 `
 const Wrap = styled('div')`
@@ -35,6 +42,8 @@ const Wrap = styled('div')`
       font-weight: bold;
    }
    ul {
+      display: flex;
+      flex-direction: column;
       margin-top: 12px;
       padding-left: 1rem;
       li {

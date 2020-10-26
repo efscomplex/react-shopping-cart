@@ -1,26 +1,34 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { HiMenuAlt2 } from 'react-icons/hi'
-
+import { store } from '../../../store'
 import { breaks } from '../../../config'
-
-import Nav from '../../base/nav/Nav'
+import { filterProducts } from 'store/action-creators'
+import { Nav } from '../../base'
+import { Product } from 'types'
 
 const Hamburger = styled(HiMenuAlt2)``
 
 function Navbar({ routes }: any) {
-   //const handleClick = () => alert('hello gemma!!')
+   const handleClick = (e: any) => {
+      const id = e.target.getAttribute('id')
+      store.dispatch(
+         filterProducts((prod: Product) => prod.categories.includes(id))
+      )
+      toggleShowMenu()
+   }
    const toggleShowMenu = () => setShowMenu((state) => !state)
    const [showMenu, setShowMenu] = useState(false)
 
    return (
       <Wrap menu={showMenu}>
          <Hamburger onClick={toggleShowMenu} />
-         <Nav routes={routes} handleClick={()  =>  {}} />
+         <Nav routes={routes} handleClick={handleClick} />
       </Wrap>
    )
 }
 const Wrap = styled('div')`
+   width: 100%;
    grid-area: navbar;
    justify-self: flex-start;
    display: flex;
