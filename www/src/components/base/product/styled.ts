@@ -49,8 +49,8 @@ export const Badget = styled('small')`
    color: white;
 `
 export const Product = styled('div')`
-   min-width: 230px;
-   flex-basis: 270px;
+   min-width: 180px;
+   flex-basis: 220px;
    flex-shrink: 1;
    flex-grow: 1;
    img {
@@ -58,10 +58,30 @@ export const Product = styled('div')`
       object-position: center;
       width: 100%;
       margin-bottom: 2rem;
+      transition: transform ease-in-out 0.4s, box-shadow ease-in 0.4s;
+      z-index: 100;
+      &:hover {
+         transform: scale(1.075);
+         box-shadow: 5px 12px 15px -1px rgba(0, 0, 0, 0.35);
+      }
    }
 `
 export const Btn = styled('button')`
    border: 1px solid black;
    font-weight: bold;
    background-color: transparent;
+   padding: 7px 1rem;
+   cursor: pointer;
+   &:active {
+      transform: scale(1.075);
+      background-color: var(--primary);
+   }
+`
+export const DetailsWrap = styled('div')`
+   display: flex;
+   position: relative;
+   & > * {
+      flex-basis: 50%;
+      gap: 2rem;
+   }
 `

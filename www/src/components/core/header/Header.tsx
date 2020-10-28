@@ -5,8 +5,13 @@ import Logo from '../../base/logo/Logo'
 import logoSrc from '../../../assets/images/logo.png'
 import parteSrc from '../../../assets/images/parte.png'
 import { Header as Wrap, Inline } from './styles'
+import withBudget from 'HOCs/withBudget'
+import { store } from 'store'
+import { getCartProducts } from 'store/selectors'
 
+const IShopping = withBudget(AiOutlineShopping)
 export default function Header() {
+   const productsInCart = getCartProducts(store.getState()).length
    return (
       <Wrap>
          <Inline gap="0">
@@ -14,7 +19,10 @@ export default function Header() {
             <Logo src={logoSrc} link="/" width="60px" />
          </Inline>
          <Inline>
-            <AiOutlineShopping size="24" />
+            <IShopping
+               size="24"
+               budget={productsInCart !== 0 && productsInCart}
+            />
             <RiUser3Line size="24" />
          </Inline>
       </Wrap>

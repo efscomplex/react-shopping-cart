@@ -21,7 +21,7 @@ export default styled(Container)`
    ${Aside} {
       width: max-content;
       @media (max-width: 900px) {
-         flex-direction: row;
+         width: 100%;
       }
    }
    ${Main} {

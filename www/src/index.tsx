@@ -1,15 +1,17 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import App from './containers/app/App'
 
 import './styles/reset.sass'
 import './styles/base.sass'
+import withApolloClient from 'HOCs/withApolloClient'
 
-ReactDOM.render(
+const ApolloApp = withApolloClient(App)
+render(
    <Router>
-      <App />
+      <ApolloApp />
    </Router>,
    document.getElementById('app')
 )

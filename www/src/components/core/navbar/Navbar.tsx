@@ -11,9 +11,9 @@ const Hamburger = styled(HiMenuAlt2)``
 
 function Navbar({ routes }: any) {
    const handleClick = (e: any) => {
-      const id = e.target.getAttribute('id')
+      const label = e.target.getAttribute('id')
       store.dispatch(
-         filterProducts((prod: Product) => prod.categories.includes(id))
+         filterProducts((prod: Product) => prod.categories.includes(label))
       )
       toggleShowMenu()
    }

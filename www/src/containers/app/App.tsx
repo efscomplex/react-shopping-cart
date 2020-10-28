@@ -1,27 +1,20 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { AiOutlineSearch as Lupe } from 'react-icons/ai'
 import { routes, theme } from 'config'
 import Main from '../main/Main'
 import { Aside, Navbar, Search, Header } from 'components/core'
-import { getFilteredProducts } from 'store/selectors'
 import Wrap from './styled'
-import { store } from 'store'
-import { filterProducts } from 'store/action-creators'
-import { Product } from 'types'
+import { useMutation } from '@apollo/client'
+import { FILTER_BY_LABEL } from 'querys'
+
 
 function App({ className }: any) {
-   const [state, setState] = useState(store.getState())
-   store.setter = setState
+   const [filterByLabel] = useMutation(FILTER_BY_LABEL)
 
-   const filteredProducts = getFilteredProducts(state)
    const onChangeSearch = ({ target }: any) => {
       const value = target.value
-      if (target.value === '') return
-      store.dispatch(
-         filterProducts((prod: Product) =>
-            prod.categories.join(' ').match(value.toLowerCase())
-         )
-      )
+      if (value === '') return
+      filterByLabel({ variables: { label: value } })
    }
    return (
       <Wrap className={className} break="1100px">
@@ -36,7 +29,7 @@ function App({ className }: any) {
             />
          </div>
          <Aside />
-         <Main filteredProducts={filteredProducts} />
+         <Main />
       </Wrap>
    )
 }

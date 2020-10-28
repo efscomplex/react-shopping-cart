@@ -23,7 +23,7 @@ const state = {
    categories,
    products,
    filteredProducts: products,
-   cartItems: [],
+   cartProducts: [],
 }
 const store = new Store(state)
 

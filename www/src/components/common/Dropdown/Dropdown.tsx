@@ -36,7 +36,7 @@ const Icon = styled('span').attrs((props: any) => ({
 `
 const Wrap = styled('div')`
    position: relative;
-   padding-bottom: 12px;
+   padding-bottom: 0.8rem;
    text-transform: capitalize;
    .category {
       font-weight: bold;
@@ -44,17 +44,15 @@ const Wrap = styled('div')`
    ul {
       display: flex;
       flex-direction: column;
-      margin-top: 12px;
-      padding-left: 1rem;
-      li {
-         padding: 7px 0;
+      padding: 1rem;
+      a {
+         line-height: 2.5;
       }
    }
    border-bottom: 1px solid rgba(200, 200, 200, 0.7);
    transition: max-height ease-in-out 1s;
    .hidden {
-      overflow: hidden;
-      max-height: 0;
+      display: none;
    }
 `
 export default Dropdown
