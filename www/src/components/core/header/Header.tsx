@@ -1,17 +1,19 @@
 import React from 'react';
+import { useQuery } from '@apollo/client'
+import Logo from 'components/base/logo/Logo'
+import { Header as Wrap, Inline } from './styles'
 import { AiOutlineShopping } from 'react-icons/ai'
 import { RiUser3Line } from 'react-icons/ri'
-import Logo from '../../base/logo/Logo'
-import logoSrc from '../../../assets/images/logo.png'
-import parteSrc from '../../../assets/images/parte.png'
-import { Header as Wrap, Inline } from './styles'
+import logoSrc from 'assets/logo.png'
+import parteSrc from 'assets/parte.png'
 import withBudget from 'HOCs/withBudget'
-import { store } from 'store'
-import { getCartProducts } from 'store/selectors'
+import { GET_CART_PRODUCTS } from 'operations'
 
 const IShopping = withBudget(AiOutlineShopping)
+
 export default function Header() {
-   const productsInCart = getCartProducts(store.getState()).length
+   const { data } = useQuery(GET_CART_PRODUCTS)
+   const numOfProductsInCart = data?.cartProducts.length || 0
    return (
       <Wrap>
          <Inline gap="0">
@@ -21,7 +23,7 @@ export default function Header() {
          <Inline>
             <IShopping
                size="24"
-               budget={productsInCart !== 0 && productsInCart}
+               budget={numOfProductsInCart !== 0 && numOfProductsInCart}
             />
             <RiUser3Line size="24" />
          </Inline>

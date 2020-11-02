@@ -1,20 +1,21 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { HiMenuAlt2 } from 'react-icons/hi'
-import { store } from '../../../store'
 import { breaks } from '../../../config'
-import { filterProducts } from 'store/action-creators'
 import { Nav } from '../../base'
-import { Product } from 'types'
+import { useMutation } from '@apollo/client'
+import { FILTER_BY_LABEL } from 'operations'
+import { filteredProducts } from 'config/cache'
 
 const Hamburger = styled(HiMenuAlt2)``
 
 function Navbar({ routes }: any) {
+   const [filterProductsByLabel, { data }] = useMutation(FILTER_BY_LABEL)
+   data && filteredProducts(data.filterProductsByLabel)
+   
    const handleClick = (e: any) => {
       const label = e.target.getAttribute('id')
-      store.dispatch(
-         filterProducts((prod: Product) => prod.categories.includes(label))
-      )
+      filterProductsByLabel({ variables: { label } })
       toggleShowMenu()
    }
    const toggleShowMenu = () => setShowMenu((state) => !state)

@@ -61,8 +61,7 @@ export const Product = styled('div')`
       transition: transform ease-in-out 0.4s, box-shadow ease-in 0.4s;
       z-index: 100;
       &:hover {
-         transform: scale(1.075);
-         box-shadow: 5px 12px 15px -1px rgba(0, 0, 0, 0.35);
+         //transform: scale(1.075);
       }
    }
 `

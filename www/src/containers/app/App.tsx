@@ -5,17 +5,19 @@ import Main from '../main/Main'
 import { Aside, Navbar, Search, Header } from 'components/core'
 import Wrap from './styled'
 import { useMutation } from '@apollo/client'
-import { FILTER_BY_LABEL } from 'querys'
-
+import { FILTER_BY_LABEL } from 'operations'
+import { filteredProducts } from 'config/cache'
 
 function App({ className }: any) {
    const [filterByLabel] = useMutation(FILTER_BY_LABEL)
 
-   const onChangeSearch = ({ target }: any) => {
+   const onChangeSearch = async ({ target }: any) => {
       const value = target.value
       if (value === '') return
-      filterByLabel({ variables: { label: value } })
+      const { data } = await filterByLabel({ variables: { label: value } })
+      filteredProducts(data.filterProductsByLabel)
    }
+
    return (
       <Wrap className={className} break="1100px">
          <Header />
