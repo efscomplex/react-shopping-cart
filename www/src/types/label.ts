@@ -1,5 +1,7 @@
 export type Label =
    | 'niño'
+   | 'infantil'
+   | 'todas'
    | 'niña'
    | 'hombre'
    | 'moda'

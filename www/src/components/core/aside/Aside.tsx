@@ -1,24 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import useSelector from '../../../hooks/useSelector'
 import { getCategories } from '../../../store/selectors'
 import { Map, Dropdown } from '../../common'
+import { store } from 'store'
+import { filterProducts } from 'store/action-creators'
+import { Product } from 'types'
+import { Label } from 'types/label'
 
 function Aside({ ...props }: any) {
-   const categories = useSelector(getCategories)
+   const categories = getCategories(store.getState())
+   const handleClick = (label: Label) => {
+      store.dispatch(
+         filterProducts((prod: Product) => prod.categories.includes(label))
+      )
+   }
    return (
-      <Wrap {...props}>
-         <Map from={categories} template={Dropdown} />
-      </Wrap>
+      <div {...props}>
+         <Map from={categories} template={Dropdown} handleClick={handleClick} />
+      </div>
    )
 }
-const Wrap = styled('aside')`
-   grid-area: aside;
+const Wrap = styled(Aside)`
    display: flex;
    flex-direction: column;
    gap: 1rem;
-   
 `
-export default Aside
-export { Aside }
+export default Wrap
+export { Wrap as Aside }

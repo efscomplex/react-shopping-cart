@@ -1,11 +1,13 @@
 {
    "name": "backend",
    "version": "1.0.0",
-   "description": "privalia api",
+   "description": "api cart shopping products items market",
    "main": "intex.ts",
    "scripts": {
-      "dev": "PORT=3000 nodemon -w src --exec babel-node src/index",
-      "build": "babel src -o dist/index.js --minified"
+      "new:comp": "touch src/components/newfile.ts",
+      "dev": "PORT=3000 nodemon dist/server",
+      "build": "babel src --watch -d dist --minified",
+      "serve": "nodemon dist/index"
    },
    "keywords": [
       "express",
@@ -18,21 +20,30 @@
       "@babel/cli": "^7.12.1",
       "@babel/core": "^7.12.3",
       "@babel/node": "^7.12.1",
+      "@babel/plugin-transform-typescript": "^7.12.1",
       "@babel/preset-env": "^7.12.1",
       "@babel/preset-typescript": "^7.12.1",
       "@types/express": "^4.17.8",
+      "@types/mongoose": "^5.7.36",
+      "@types/node": "^14.14.2",
       "@typescript-eslint/eslint-plugin": "^4.4.1",
       "@typescript-eslint/parser": "^4.4.1",
+      "dotenv": "^8.2.0",
       "eslint": "^7.11.0",
       "eslint-config-standard": "^14.1.1",
       "eslint-plugin-import": "^2.22.1",
       "eslint-plugin-node": "^11.1.0",
       "eslint-plugin-promise": "^4.2.1",
       "eslint-plugin-standard": "^4.0.1",
-      "nodemon": "^2.0.5"
+      "helmet": "^4.1.1",
+      "mongoose": "^5.10.10",
+      "nodemon": "^2.0.5",
+      "webpack": "^5.2.0",
+      "webpack-cli": "^4.1.0"
    },
    "dependencies": {
+      "apollo-server": "^2.18.2",
       "express": "^4.17.1",
-      "mongoose": "^5.10.9"
+      "graphql": "^15.4.0"
    }
 }

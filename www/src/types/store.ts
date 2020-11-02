@@ -5,6 +5,7 @@ export type Reducer = <T>(state: T, action: Action) => T
 export type ActionType =
    | 'products/id'
    | 'products'
+   | 'filteredProducts'
    | 'cartProducts/add/id'
    | 'cartProducts/remove/id'
    | 'cartProducts'

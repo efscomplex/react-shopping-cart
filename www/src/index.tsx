@@ -1,19 +1,18 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { store } from './store'
-import StoreContext from './context/storeContext'
-
-import App from './containers/App'
+import { cache } from 'config/cache'
+import App from './containers/app/App'
 
 import './styles/reset.sass'
 import './styles/base.sass'
 
-ReactDOM.render(
+import withApolloClient from 'HOCs/withApolloClient'
+
+const ApolloApp = withApolloClient(App, { cache })
+render(
    <Router>
-      <StoreContext.Provider value={store.getState()}>
-         <App />
-      </StoreContext.Provider>
+      <ApolloApp />
    </Router>,
    document.getElementById('app')
 )

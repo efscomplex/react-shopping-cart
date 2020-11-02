@@ -1,5 +1,5 @@
 {
-"name": "react-shopping-cart",
+  "name": "react-shopping-cart",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +9,7 @@
     "@types/node": "^12.12.68",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "graphql": "^15.4.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-icons": "^3.11.0",

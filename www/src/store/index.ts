@@ -1,14 +1,19 @@
 import { products, categories } from './__mocks__/'
-import storeReducer from './reducer'
-import { Reducer, Action } from '../types/store'
+import reducer from './reducer'
+import { Action } from '../types/store'
 
 class Store {
    private state: any
-   public dispatch: (action: Action) => void
-   constructor(initialState: any, reducer: Reducer) {
+   public setter = (state: any) => {}
+   constructor(initialState: any) {
       this.state = initialState
-      this.dispatch = (action: Action) => reducer(this.state, action)
    }
+   
+   dispatch(action: Action) {
+      this.state = reducer(this.state, action)
+      this.setter(this.state)
+   }
+
    getState() {
       return this.state
    }
@@ -17,14 +22,9 @@ class Store {
 const state = {
    categories,
    products,
-   cartItems: [],
+   filteredProducts: products,
+   cartProducts: [],
 }
-
-const store = new Store(state, storeReducer)
+const store = new Store(state)
 
 export { store }
-
-/* NOTE Seclectors - Extract a piece of the Store state 
-   selectDefaultTheme = state => state.theme.default
-   currentValue = selectCounterVAlue(store.getState())
-*/
