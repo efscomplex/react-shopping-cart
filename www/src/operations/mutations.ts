@@ -16,8 +16,8 @@ const ProductFragment = gql`
    }
 `
 export const ADD_PRODUCT_TO_CART = gql`
-   mutation addProductToCart($id: ID!) {
-      addProductToCart(id: $id) {
+   mutation addToCart($id: ID!) {
+      addProductToCart(productId: $id) {
          ...ProductFields
       }
    }

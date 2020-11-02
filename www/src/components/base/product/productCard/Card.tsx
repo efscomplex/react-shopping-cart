@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client'
 import { ADD_PRODUCT_TO_CART } from 'operations'
 import { Img, Select } from 'components/common'
 import { useHistory } from 'react-router-dom'
+import { cartProducts } from 'config/cache'
 import {
    Actions,
    Badget,
@@ -12,6 +13,7 @@ import {
    Price,
    Product,
 } from '../styled'
+import { Product as IProduct } from 'types'
 
 const Card = ({ className, ...product }: any) => {
    const [addToCart] = useMutation(ADD_PRODUCT_TO_CART)
@@ -21,9 +23,11 @@ const Card = ({ className, ...product }: any) => {
    const onClickDetails = () => {
       history.push(`/${product.id}`)
    }
-   const onClickAddToCart = () => {
+   const onClickAddToCart = async () => {
       const productId = product.id
-      addToCart({ variables: { productId } })
+      const data: any  = await addToCart({ variables: { id: productId } })
+      const products: IProduct[] = [...cartProducts(), data.addToCart]
+      cartProducts(products)
    }
    return (
       <Product>
